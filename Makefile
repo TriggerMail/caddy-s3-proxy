@@ -7,6 +7,8 @@ export AWS_SECRET_ACCESS_KEY=dummy
 export AWS_ACCESS_KEY_ID=dummy
 export AWS_REGION=dummy
 export AWS_ENDPOINT=http://localhost:4566
+export GOOS=linux
+export GOARCH=amd64
 
 .PHONY: build
 build: caddy
@@ -17,7 +19,8 @@ caddy: *.go go.mod Makefile
 
 .PHONY: docker
 docker: caddy  ## build a docker image for caddy with the s3proxy
-	@docker build -t caddy .
+	@docker buildx build --platform linux/amd64 -t us.gcr.io/bluecore-ops/apps/caddy:${VERSION} .
+	@docker push us.gcr.io/bluecore-ops/apps/caddy:${VERSION}
 
 .PHONY: test
 test:  ## Run go test on source base

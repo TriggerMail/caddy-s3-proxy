@@ -6,6 +6,7 @@ require (
 	cloud.google.com/go v0.54.0 // indirect
 	github.com/aws/aws-sdk-go v1.36.23
 	github.com/caddyserver/caddy/v2 v2.3.0
+	github.com/caddyserver/xcaddy v0.2.0 // indirect
 	github.com/dustin/go-humanize v1.0.1-0.20200219035652-afde56e7acac
 	github.com/klauspost/cpuid v1.3.1 // indirect
 	github.com/miekg/dns v1.1.35 // indirect
